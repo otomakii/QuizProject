@@ -4,7 +4,7 @@ from tkinter import messagebox
 
 class QuizApp:
     def __init__(self, root):
-        # Initialize the quiz application
+        # Initialize the quiz application yes
         self.root = root
         self.root.title("Quiz App")
 
