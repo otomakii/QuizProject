@@ -54,8 +54,10 @@ class QuizApp:
             var = tk.StringVar()
             var.set("")
             self.option_vars.append(var)
+
+        for i in range(4):
             option_button = tk.Radiobutton(
-                root, text="", variable=var, value="", font=("Arial", 12))
+                root, text="", value="", font=("Arial", 12))
             option_button.pack()
             self.option_buttons.append(option_button)
 
@@ -147,7 +149,7 @@ class QuizApp:
 if __name__ == "__main__":
     root = tk.Tk()
     app = QuizApp(root)
-    root.geometry('400x330')
+    root.geometry('1000x1000')
     root.title("Quiz")
     root.resizable(False, False)
     root.mainloop()
