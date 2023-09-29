@@ -1,3 +1,4 @@
+# fix the 10 radio buttons
 import tkinter as tk
 from tkinter import messagebox
 
@@ -30,6 +31,11 @@ class QuizApp:
                 "options": ["Auckland", "Wellington", "Christchurch", "Dunedin"],
                 "answer": "Wellington"
             },
+            {
+                "question": "What is 1 + 1?",
+                "options": ["2", "window", "1", "11"],
+                "answer": "2"
+            },
         ]
 
         # Initialize variables to keep track of the current question and score
@@ -44,7 +50,7 @@ class QuizApp:
         # Initialize radio buttons and their variables for answer choices
         self.option_vars = []
         self.option_buttons = []
-        for i in range(4):
+        for i in range(10):
             var = tk.StringVar()
             var.set("")
             self.option_vars.append(var)
@@ -74,9 +80,16 @@ class QuizApp:
             question_data = self.questions[self.current_question]
             self.question_label.config(text=question_data["question"])
             options = question_data["options"]
-            for i in range(4):
+
+            # Create radio buttons dynamically based on the number of answer choices
+            num_options = len(options)
+            for i in range(num_options):
                 self.option_buttons[i].config(
                     text=options[i], variable=self.option_vars[self.current_question], value=options[i])
+
+            # Hide any remaining radio buttons (if any)
+            for j in range(num_options, 4):
+                self.option_buttons[j].pack_forget()
         else:
             self.hide_question()  # Hide the question and options
             self.show_score()  # Show the score
