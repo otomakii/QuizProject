@@ -141,7 +141,6 @@ class QuizApp:
         self.retry_button.pack()
 
     def save_to_file(self):
-        # Get the content you want to save (replace this with your data)
         results = """
         Category: {}
         Total Questions: {}
