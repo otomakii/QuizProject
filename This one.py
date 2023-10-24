@@ -11,55 +11,180 @@ class QuizApp:
         self.root = root
         self.root.title("Quiz")
 
+        # Set the background color for the root window.
+        self.root.configure(bg="#581b61")
+
         # Define a list of quiz categories.
-        self.categories = ["Flags", "Programming", "General Knowledge"]
+        self.categories = ["Flags                         ", "Programming         ", "General Knowledge"]
         self.selected_category = None
 
         # Create a label widget for selecting a quiz category.
-        self.category_label = tk.Label(root, text="Select a category:", font=("Arial", 14))
+        self.category_label = tk.Label(root, text="Select a category:", font=("Arial", 14),
+                                       fg="yellow", bg="#581b61")
         self.category_buttons = []
 
         # Create a frame for displaying quiz questions.
-        self.question_frame = tk.Frame(root)
+        self.question_frame = tk.Frame(root, bg="#581b61")
 
-        # Define a dictionary of quiz questions and answers.
         self.questions = {
-            "Flags": [
+            "Flags                         ": [
                 {
-                    "question": "Which flag is this?🌈",
-                    "options": ["3", "4", "1", "2"],
-                    "answer": "3"
+                    "question": "What is the most common colour on world flags?",
+                    "options": ["red", "white", "blue", "green"],
+                    "answer": "red"
                 },
                 {
-                    "question": "Which flag is this?",
-                    "options": ["2", "3", "4", "5"],
-                    "answer": "2"
+                    "question": "Which of these countries\r"
+                                " has the most colours on their flag?",
+                    "options": ["germany", "korea", "belgium", "france"],
+                    "answer": "korea"
+                },
+                {
+                    "question": "How many rings are in the olympic flag?",
+                    "options": ["7", "4", "6", "5"],
+                    "answer": "5"
+                },
+                {
+                    "question": "What colours are on the flag of netherlands?",
+                    "options": ["red, white, blue", "red, yellow, green", "green, blue", "yellow, white blue"],
+                    "answer": "red, white, blue"
+                },
+                {
+                    "question": "Which flag has a purple and green\r"
+                                " feathered bird in the center?",
+                    "options": ["ghana", "haiti", "Dominica", "bahamas"],
+                    "answer": "Dominica"
+                },
+                {
+                    "question": "What do you call the study of flags?",
+                    "options": ["flagknowledge", "geography", "vexillology", "flagology"],
+                    "answer": "vexillology"
+                },
+                {
+                    "question": "Which flag is the only non-quadrilateral flag?",
+                    "options": ["Sri lanka", "ecuador", "turkey", "Nepal"],
+                    "answer": "Nepal"
+                },
+                {
+                    "question": "How many stars are on the Chinese flag?",
+                    "options": ["5", "4", "6", "1"],
+                    "answer": "5"
+                },
+                {
+                    "question": "How many stripes does the USA flag have?",
+                    "options": ["50", "13", "51", "11"],
+                    "answer": "13"
+                },
+                {
+                    "question": "What is the colour order of Frances flag?",
+                    "options": ["black, yellow, red", "red, blue, white", "green, white, red", "blue, white, red"],
+                    "answer": "blue, white, red"
                 },
             ],
-            "Programming": [
+            "Programming         ": [
                 {
-                    "question": "Which Of The Following?",
-                    "options": ["1", "3", "4", "2"],
-                    "answer": "1"
+                    "question": "",
+                    "options": ["", "", "", ""],
+                    "answer": ""
                 },
                 {
-                    "question": "Which Of The Following?",
-                    "options": ["2", "3", "4", "1"],
-                    "answer": "2"
+                    "question": "",
+                    "options": ["", "", "", ""],
+                    "answer": ""
+                },
+                {
+                    "question": "",
+                    "options": ["", "", "", ""],
+                    "answer": ""
+                },
+                {
+                    "question": "",
+                    "options": ["", "", "", ""],
+                    "answer": ""
+                },
+                {
+                    "question": "",
+                    "options": ["", "", "", ""],
+                    "answer": ""
+                },
+                {
+                    "question": "",
+                    "options": ["", "", "", ""],
+                    "answer": ""
+                },
+                {
+                    "question": "",
+                    "options": ["", "", "", ""],
+                    "answer": ""
+                },
+                {
+                    "question": "",
+                    "options": ["", "", "", ""],
+                    "answer": ""
+                },
+                {
+                    "question": "",
+                    "options": ["", "", "", ""],
+                    "answer": ""
+                },
+                {
+                    "question": "",
+                    "options": ["", "", "", ""],
+                    "answer": ""
                 },
             ],
             "General Knowledge": [
                 {
-                    "question": "What is the most common surname\r"
-                                " in the United States?",
-                    "options": ["Brown", "Smith", "Johnson", "Williams"],
+                    "question": "Which is the smallest ocean?",
+                    "options": ["Southern ocean", "Arctic ocean", "Indian ocean", "Atlantic ocean"],
+                    "answer": "Arctic ocean"
+                },
+                {
+                    "question": "On which time zone is London?",
+                    "options": ["Central european standard time", "Eastern standard time",
+                                "Australian eastern daylight Time", "Greenwich mean time"],
+                    "answer": "Greenwich mean time"
+                },
+                {
+                    "question": "What is the most common surname\r in the United States?",
+                    "options": ["Smith", "Williams", "Johnson", "Brown"],
                     "answer": "Smith"
                 },
                 {
-                    "question": "What country drinks the most\r"
-                                " coffee per capita?",
-                    "options": ["Finland", "Norway", "Iceland", "Denmark"],
+                    "question": "During which month is Thanksgiving celebrated?",
+                    "options": ["January", "December", "November", "October"],
+                    "answer": "November"
+                },
+                {
+                    "question": "Lead Pipe, Wrench, Revolver, Dagger, Candlestick\r"
+                                " are weapons in which board game?",
+                    "options": ["Risk", "Monopoly", "Cluedo", "Mysterium"],
+                    "answer": "Cluedo"
+                },
+                {
+                    "question": "What country drinks the most coffee per capita?",
+                    "options": ["Denmark", "Norway", "Iceland", "Finland"],
                     "answer": "Finland"
+                },
+                {
+                    "question": "What is the longest river in the world?",
+                    "options": ["Nile", "Amazon", "Congo", "Mississippi"],
+                    "answer": "Nile"
+                },
+                {
+                    "question": "What is Earths largest continent?",
+                    "options": ["South america", "Asia", "North america", "Africa"],
+                    "answer": "Asia"
+                },
+                {
+                    "question": "Who painted the Mona Lisa?",
+                    "options": ["Pablo Picasso", "Vincent van Gogh", "Michelangelo", "Leonardo da Vinci"],
+                    "answer": "Leonardo da Vinci"
+                },
+                {
+                    "question": "Which two planets in the solar system have no moons?",
+                    "options": ["Mercury and Venus", "Neptune and Jupiter", "Mars and Earth", "Saturn and Uranus"],
+                    "answer": "Mercury and Venus"
                 },
             ],
         }
@@ -70,26 +195,28 @@ class QuizApp:
         self.total_questions = 0
 
         # Create a label for displaying the quiz question.
-        self.question_label = tk.Label(self.question_frame, text="", font=("Arial", 14))
+        self.question_label = tk.Label(self.question_frame, text="", font=("Arial", 14), bg="#581b61")
 
         # Create variables and buttons for quiz options.
         self.option_vars = []
         self.option_buttons = []
 
         # Create a button for moving to the next question.
-        self.next_button = tk.Button(self.question_frame, text="Next", command=self.check_answer)
+        self.next_button = tk.Button(self.question_frame, text="Next", command=self.check_answer, bg="#581b61")
 
         # Create a label for displaying the quiz score.
-        self.score_label = tk.Label(self.question_frame, text="", font=("Arial", 14))
+        self.score_label = tk.Label(self.question_frame, text="", font=("Arial", 14), bg="#581b61")
 
         # Create a button for starting the quiz again.
-        self.retry_button = tk.Button(self.question_frame, text="Start again", command=self.retry_quiz)
+        self.retry_button = tk.Button(self.question_frame, text="Start again", command=self.retry_quiz,
+                                      bg="#581b61")
 
         # Initialize the quiz logic.
         self.question_logic()
 
         # Create a button for saving quiz results.
-        self.save_button = tk.Button(self.question_frame, text="Save results", command=self.save_to_file)
+        self.save_button = tk.Button(self.question_frame, text="Save results", command=self.save_to_file,
+                                     fg="black", bg="yellow")
         self.save_button.pack()
 
     def question_logic(self):
@@ -97,44 +224,53 @@ class QuizApp:
         self.category_label.pack(pady=20)
         for category in self.categories:
             # Create buttons for each category and associate a callback function to select a category.
-            button = tk.Button(root, text=category, command=lambda c=category: self.select_category(c))
+            button = tk.Button(root, text=category, command=lambda c=category: self.select_category(c),
+                               fg="black", bg="yellow")
             button.pack()
             self.category_buttons.append(button)
 
         # Create a frame for quiz questions and answers.
-        self.question_frame = tk.Frame(root)
+        self.question_frame = tk.Frame(root, bg="#581b61")
 
         # Create a label for displaying quiz questions.
-        self.question_label = tk.Label(self.question_frame, text="", font=("Arial", 14))
+        self.question_label = tk.Label(self.question_frame, text="", font=("Arial", 14),
+                                       fg="yellow", bg="#581b61")
         self.question_label.pack(pady=20)
 
-        # Create option buttons for quiz answers.
+        # Create option buttons for quiz answers. The amount of questions allowed
         self.option_buttons = []
-        for i in range(4):
+        for i in range(10):
             var = tk.StringVar()
             var.set("")
             self.option_vars.append(var)
 
         for i in range(4):
             option_button = tk.Radiobutton(
-                self.question_frame, text="", value="", font=("Arial", 12))
+                self.question_frame, text="", value="", font=("Arial", 12), bg="yellow")
             option_button.pack()
             self.option_buttons.append(option_button)
 
+        next_button_frame = tk.Frame(self.question_frame, bg="#581b61")
+        next_button_frame.pack(pady=10)
+
         # Create a button to move to the next question.
-        self.next_button = tk.Button(self.question_frame, text="Next", command=self.check_answer)
+        self.next_button = tk.Button(self.question_frame, text="Next", command=self.check_answer,
+                                     fg="black", bg="yellow")
         self.next_button.pack()
 
         # Create a label for displaying the quiz score.
-        self.score_label = tk.Label(self.question_frame, text="", font=("Arial", 14))
+        self.score_label = tk.Label(self.question_frame, text="", font=("Arial", 14),
+                                    fg="yellow", bg="#581b61")
         self.score_label.pack(pady=20)
 
         # Create a button to start the quiz again.
-        self.retry_button = tk.Button(self.question_frame, text="Start again", command=self.retry_quiz)
+        self.retry_button = tk.Button(self.question_frame, text="Start again  \r",
+                                      fg="black", bg="yellow", command=self.retry_quiz)
         self.retry_button.pack_forget()
 
         # Create a button for saving quiz results and hide it initially.
-        self.save_button = tk.Button(self.question_frame, text="Save results", command=self.save_to_file)
+        self.save_button = tk.Button(self.question_frame, text="Save results\r",
+                                     fg="black", bg="yellow", command=self.save_to_file)
         self.save_button.pack_forget()
 
         # Display the "Start again" button.
@@ -232,7 +368,8 @@ class QuizApp:
 
     def show_score(self):
         # Display the quiz score and the "Start again" and "Save results" buttons.
-        score_text = f"You got {self.score}/{self.total_questions} correct answers"
+        score_text = f"Thank you so much for playing\r" \
+                     f" you got {self.score}/{self.total_questions} correct answers"
         self.score_label.config(text=score_text)
         self.retry_button.pack()
         self.retry_button.config(state=tk.NORMAL)
@@ -266,7 +403,7 @@ if __name__ == "__main__":
     # Create an instance of the QuizApp class.
     app = QuizApp(root)
     # Set the window size and title.
-    root.geometry('400x260')
+    root.geometry('500x260')
     root.title("Quiz")
     # Disable window resizing.
     root.resizable(False, False)
