@@ -15,7 +15,7 @@ class QuizApp:
         self.root.configure(bg="#581b61")
 
         # Define a list of quiz categories.
-        self.categories = ["Flags                         ", "Programming         ", "General Knowledge"]
+        self.categories = ["Flags                         ", "Mythology               ", "General Knowledge"]
         self.selected_category = None
 
         # Create a label widget for selecting a quiz category.
@@ -81,56 +81,60 @@ class QuizApp:
                     "answer": "blue, white, red"
                 },
             ],
-            "Programming         ": [
+            "Mythology               ": [
                 {
-                    "question": "",
-                    "options": ["", "", "", ""],
-                    "answer": ""
+                    "question": "Who is the god of the sky in Greek mythology?",
+                    "options": ["zeus", "apollo", "aphrodite", "ares"],
+                    "answer": "zeus"
                 },
                 {
-                    "question": "",
-                    "options": ["", "", "", ""],
-                    "answer": ""
+                    "question": "Which planet is named after the\r"
+                                " Roman God of war?",
+                    "options": ["jupiter", "earth", "saturn", "mars"],
+                    "answer": "mars"
                 },
                 {
-                    "question": "",
-                    "options": ["", "", "", ""],
-                    "answer": ""
+                    "question": "Viking warriors go 2 after they die\r"
+                                " according to Norse mythology?",
+                    "options": ["heaven", "valhalla", "hell", "spirit realm"],
+                    "answer": "valhalla"
                 },
                 {
-                    "question": "",
-                    "options": ["", "", "", ""],
-                    "answer": ""
+                    "question": "Which Egyptian god has the head of a jackal?",
+                    "options": ["anubis", "ra", "geb", "horus"],
+                    "answer": "anubis"
                 },
                 {
-                    "question": "",
-                    "options": ["", "", "", ""],
-                    "answer": ""
+                    "question": "Where do the gods live in Greek mythology?",
+                    "options": ["atlantis", "asgard", "aztec", "mount olympus"],
+                    "answer": "mount olympus"
                 },
                 {
-                    "question": "",
-                    "options": ["", "", "", ""],
-                    "answer": ""
+                    "question": "Which Norse god carries a hammer?",
+                    "options": ["loki", "odin", "thor", "captain america"],
+                    "answer": "thor"
                 },
                 {
-                    "question": "",
-                    "options": ["", "", "", ""],
-                    "answer": ""
+                    "question": "Which animal is associated\r"
+                                " with Odin in Norse mythology?",
+                    "options": ["albatross", "crow", "raven", "eagle"],
+                    "answer": "raven"
                 },
                 {
-                    "question": "",
-                    "options": ["", "", "", ""],
-                    "answer": ""
+                    "question": "What was the loch ness monster's nickname?",
+                    "options": ["nessie", "nessy-wessy", "noch less", "scotlands monster"],
+                    "answer": "nessie"
                 },
                 {
-                    "question": "",
-                    "options": ["", "", "", ""],
-                    "answer": ""
+                    "question": "Who is the god associated with music, prophecy,\r"
+                                " and the sun in Greek mythology?",
+                    "options": ["hera", "apollo", "eros", "artemis"],
+                    "answer": "apollo"
                 },
                 {
-                    "question": "",
-                    "options": ["", "", "", ""],
-                    "answer": ""
+                    "question": "Who is the god of war?",
+                    "options": ["chronos", "poseidon", "athena", "ares"],
+                    "answer": "ares"
                 },
             ],
             "General Knowledge": [
@@ -182,7 +186,8 @@ class QuizApp:
                     "answer": "Leonardo da Vinci"
                 },
                 {
-                    "question": "Which two planets in the solar system have no moons?",
+                    "question": "Which two planets in the solar system\r"
+                                " have no moons?",
                     "options": ["Mercury and Venus", "Neptune and Jupiter", "Mars and Earth", "Saturn and Uranus"],
                     "answer": "Mercury and Venus"
                 },
@@ -319,9 +324,11 @@ class QuizApp:
     def update_question(self):
         if self.selected_category is not None:  # Check if category is selected
             if self.current_question < self.total_questions:
-                # Display the current quiz question and options.
+                # Display the current question number and the quiz question.
                 question_data = self.questions[self.selected_category][self.current_question]
-                self.question_label.config(text=question_data["question"])
+                question_number = self.current_question + 1
+                self.question_label.config(
+                    text=f"{question_number}/{self.total_questions}: {question_data['question']}")
                 options = question_data["options"]
                 num_options = len(options)
                 for i in range(num_options):
