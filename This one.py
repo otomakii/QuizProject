@@ -4,7 +4,7 @@ import tkinter as tk
 from tkinter import messagebox, filedialog
 
 
-# Create a class for the QuizApp.
+# Create a class for the QuizApp yes.
 class QuizApp:
     def __init__(self, root):
         # Initialize the root window for the application.
