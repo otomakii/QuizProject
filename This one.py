@@ -4,7 +4,7 @@ import tkinter as tk
 from tkinter import messagebox, filedialog
 
 
-# Create a class for the QuizApp yes.
+# Create a class for the QuizApp.
 class QuizApp:
     def __init__(self, root):
         # Initialize the root window for the application.
@@ -30,8 +30,8 @@ class QuizApp:
             "Flags                         ": [
                 {
                     "question": "What is the most common colour on world flags?",
-                    "options": ["red", "white", "blue", "green"],
-                    "answer": "red"
+                    "options": ["red     ", "white  ", "blue    ", "green "],
+                    "answer": "red     "
                 },
                 {
                     "question": "Which of these countries\r"
@@ -84,8 +84,8 @@ class QuizApp:
             "Mythology               ": [
                 {
                     "question": "Who is the god of the sky in Greek mythology?",
-                    "options": ["zeus", "apollo", "aphrodite", "ares"],
-                    "answer": "zeus"
+                    "options": ["zeus        ", "apollo      ", "aphrodite", "ares         "],
+                    "answer": "zeus        "
                 },
                 {
                     "question": "Which planet is named after the\r"
@@ -140,8 +140,8 @@ class QuizApp:
             "General Knowledge": [
                 {
                     "question": "Which is the smallest ocean?",
-                    "options": ["Southern ocean", "Arctic ocean", "Indian ocean", "Atlantic ocean"],
-                    "answer": "Arctic ocean"
+                    "options": ["Southern ocean", "Arctic ocean     ", "Indian ocean     ", "Atlantic ocean   "],
+                    "answer": "Arctic ocean     "
                 },
                 {
                     "question": "On which time zone is London?",
